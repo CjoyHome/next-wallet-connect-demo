@@ -9,12 +9,21 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "14.0.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "@metamask/detect-provider": "^1.2.0",
+    "@walletconnect/modal": "^2.6.2",
+    "@web3modal/ethers5": "^3.5.0",
+    "ethers": "^5.7.2",
+    "keccak256": "^1.0.6",
+    "merkletreejs": "^0.3.9",
+    "next": "12.1.6",
+    "react": "18.1.0",
+    "react-bootstrap": "^2.4.0",
+    "react-dom": "18.1.0",
+    "react-intl": "^6.4.2",
+    "web3": "^1.7.3"
   },
   "devDependencies": {
     "eslint": "8.54.0",
-    "eslint-config-next": "14.0.3"
+    "eslint-config-next": "^12.1.6"
   }
 }

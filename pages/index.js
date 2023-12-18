@@ -1,8 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import { ethers } from 'ethers'
+import { useWeb3Modal, useWeb3ModalAccount, useWeb3ModalProvider, useDisconnect, useWeb3ModalEvents } from '@web3modal/ethers5/react'
+import { useEffect } from 'react'
 
 export default function Home() {
+  const { open } = useWeb3Modal()
+  const { address, chainId, isConnected } = useWeb3ModalAccount()
+  const { walletProvider } = useWeb3ModalProvider() 
+
+  useEffect(() => {
+    console.log('walletProvider', walletProvider)
+  })
+
   return (
     <div className={styles.container}>
       <Head>
@@ -15,7 +26,15 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome to <a href="https://nextjs.org">Next.js!</a>
         </h1>
-
+        <div>
+          {/* <button variant="primary" onClick={() => connectWallet(false)}>
+            connect
+          </button> */}
+           <>
+            <button onClick={() => open()}>Open Connect Modal</button>
+            <button onClick={() => open({ view: 'Networks' })}>Open Network Modal</button>
+          </>
+        </div>
         <p className={styles.description}>
           Get started by editing{' '}
           <code className={styles.code}>pages/index.js</code>
